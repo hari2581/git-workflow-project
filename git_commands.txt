@@ -1,0 +1,69 @@
+GIT COMMANDS USED IN THE ASSIGNMENT
+Name: Hari Narayan Shukla
+ID: 2024EB01068
+Repository: https://github.com/hari2581/git-workflow-project
+
+STEP 1: LOCAL REPOSITORY SETUP
+git init
+    Creates a new empty Git repository in the current folder (.git directory).
+git config user.name "Hari Narayan Shukla"
+    Sets the author name that is recorded in each commit.
+git config user.email "<email>"
+    Sets the author email that is recorded in each commit.
+git status
+    Shows which files are untracked, modified, or staged.
+
+STEP 2: GIT WORKFLOW EXECUTION
+git add .
+    Stages all new and modified files so they are included in the next commit.
+git commit -m "Initial commit: add index.html and about.html"
+    Records the staged files as the first snapshot in the history.
+git add index.html
+    Stages only the modified index.html file.
+git commit -m "Update index.html with welcome message"
+    Records the second commit with the change to index.html.
+git branch feature
+    Creates a new branch named feature pointing at the current commit.
+git checkout feature
+    Switches the working directory to the feature branch.
+git branch
+    Lists all local branches and marks the current one with *.
+git commit -m "Add contact info to about.html (feature branch)"
+    Records the change made on the feature branch.
+git checkout main
+    Switches back to the main branch.
+git merge --no-ff feature
+    Merges the feature branch into main and creates a merge commit.
+git log --oneline --graph --all
+    Shows the full commit history as a compact graph with branch lines.
+
+STEP 3: .GITIGNORE IMPLEMENTATION
+git status --ignored --short
+    Shows ignored files (marked !!) to confirm the .gitignore rules work.
+git commit -m "Add .gitignore for log files and temp folder"
+    Records the .gitignore file in the history.
+
+STEP 4: UNDO OPERATION
+git commit -m "Add temporary note to index.html"
+    Records an extra commit that will be undone.
+git revert --no-edit HEAD
+    Undoes the last commit by creating a new commit that reverses its changes.
+    The original commit stays in history, so the undo is visible on GitHub.
+git log --oneline
+    Shows the history before and after the undo to confirm the effect.
+
+STEP 5: GITHUB INTEGRATION
+git remote add origin https://github.com/hari2581/git-workflow-project.git
+    Links the local repository to the remote GitHub repository named origin.
+git remote -v
+    Lists the configured remotes and their URLs to confirm the link.
+git push -u origin main
+    Uploads the main branch to GitHub and sets origin/main as its upstream.
+git push -u origin feature
+    Uploads the feature branch to GitHub so branch activity is visible.
+
+STEP 6: COMMAND DOCUMENTATION
+git add git_commands.txt
+    Stages this documentation file.
+git commit -m "Add git_commands.txt documentation"
+    Records the documentation file in the history.
